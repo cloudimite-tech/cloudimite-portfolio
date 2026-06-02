@@ -147,12 +147,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px;d
   .orbit-2{width:150px;height:150px;}
   .orbit-1{width:90px;height:90px;}
   .globe-center{width:60px;height:60px;font-size:24px;}
-  .tech-badge{font-size:10px;padding:4px 8px;}
-  .badge-aws{top:5%;left:0%;}
-  .badge-ai{top:15%;right:0%;}
-  .badge-docker{bottom:20%;left:0%;}
-  .badge-cicd{bottom:10%;right:0%;}
-  .badge-next{top:45%;right:-2%;}
+  .tech-badge{font-size:10px;padding:5px 9px;}
+  .badge-aws{top:4%;left:50%;transform:translateX(-115%) !important;}
+  .badge-gcp{top:4%;right:50%;transform:translateX(115%) !important;}
+  .badge-azure{top:50%;left:1%;transform:translateY(-50%) !important;}
+  .badge-ai{top:50%;right:1%;transform:translateY(-50%) !important;}
+  .badge-docker{bottom:4%;left:50%;transform:translateX(-115%) !important;}
+  .badge-cicd{bottom:4%;right:50%;transform:translateX(115%) !important;}
   section{padding:60px 24px;}
   .section-title{font-size:clamp(26px,7vw,36px);margin-bottom:36px;}
   .services-grid{grid-template-columns:1fr;}
@@ -195,33 +196,39 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px;d
 
 <style>
 .hero-left{flex:0 0 500px;max-width:500px;}
-.hero-right{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:480px;}
-.tech-globe{position:relative;width:420px;height:420px;}
-.orbit{position:absolute;border:1px solid rgba(0,181,200,0.15);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);}
-.orbit-1{width:120px;height:120px;animation:spin1 8s linear infinite;}
-.orbit-2{width:220px;height:220px;animation:spin2 14s linear infinite;}
-.orbit-3{width:320px;height:320px;animation:spin3 20s linear infinite;}
-.orbit-4{width:420px;height:420px;animation:spin4 28s linear infinite;}
+.hero-right{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:480px;overflow:visible;}
+.tech-globe{position:relative;width:380px;height:380px;}
+.orbit{position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);}
+.orbit-1{width:110px;height:110px;border:1px solid rgba(0,181,200,0.25);animation:spin1 7s linear infinite;}
+.orbit-2{width:200px;height:200px;border:1px solid rgba(139,92,246,0.2);animation:spin2 13s linear infinite;}
+.orbit-3{width:290px;height:290px;border:1px solid rgba(249,115,22,0.2);animation:spin3 19s linear infinite;}
+.orbit-4{width:380px;height:380px;border:1px solid rgba(16,185,129,0.2);animation:spin4 27s linear infinite;}
 @keyframes spin1{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
 @keyframes spin2{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(-360deg);}}
 @keyframes spin3{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
 @keyframes spin4{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(-360deg);}}
-.orbit-dot{position:absolute;width:8px;height:8px;background:var(--cyan);border-radius:50%;top:-4px;left:50%;margin-left:-4px;box-shadow:0 0 8px var(--cyan);}
-.orbit-dot-2{background:#8B5CF6;box-shadow:0 0 8px #8B5CF6;}
-.orbit-dot-3{background:#F97316;box-shadow:0 0 8px #F97316;}
-.orbit-dot-4{background:#10B981;box-shadow:0 0 8px #10B981;}
-.globe-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:radial-gradient(circle,rgba(0,181,200,0.3),rgba(0,181,200,0.05));border:1px solid rgba(0,181,200,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 30px rgba(0,181,200,0.2);}
-.tech-badge{position:absolute;background:var(--dark3);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:var(--text);white-space:nowrap;display:flex;align-items:center;gap:6px;}
-.tech-badge span{font-size:14px;}
-.badge-aws{top:10%;left:-5%;animation:float1 4s ease-in-out infinite;}
-.badge-ai{top:20%;right:-5%;animation:float2 5s ease-in-out infinite;}
-.badge-docker{bottom:25%;left:-8%;animation:float3 6s ease-in-out infinite;}
-.badge-cicd{bottom:15%;right:-5%;animation:float1 4.5s ease-in-out infinite;}
-.badge-next{top:50%;right:-10%;animation:float2 5.5s ease-in-out infinite;}
-@keyframes float1{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-@keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
-@keyframes float3{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,181,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,181,200,0.04) 1px,transparent 1px);background-size:40px 40px;border-radius:50%;width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);}
+.orbit-dot{position:absolute;width:10px;height:10px;border-radius:50%;top:-5px;left:50%;margin-left:-5px;}
+.dot-cyan{background:var(--cyan);box-shadow:0 0 12px var(--cyan),0 0 24px rgba(0,181,200,0.4);}
+.dot-purple{background:#8B5CF6;box-shadow:0 0 12px #8B5CF6,0 0 24px rgba(139,92,246,0.4);}
+.dot-orange{background:#F97316;box-shadow:0 0 12px #F97316,0 0 24px rgba(249,115,22,0.4);}
+.dot-green{background:#10B981;box-shadow:0 0 12px #10B981,0 0 24px rgba(16,185,129,0.4);}
+.dot-blue{background:#3B82F6;box-shadow:0 0 12px #3B82F6,0 0 24px rgba(59,130,246,0.4);}
+.dot-red{background:#EF4444;box-shadow:0 0 12px #EF4444,0 0 24px rgba(239,68,68,0.4);}
+.globe-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:radial-gradient(circle,rgba(0,181,200,0.25),rgba(0,181,200,0.03));border:2px solid rgba(0,181,200,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 0 40px rgba(0,181,200,0.15),inset 0 0 20px rgba(0,181,200,0.05);}
+.globe-pulse{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;border:2px solid rgba(0,181,200,0.3);animation:pulse 3s ease-out infinite;}
+@keyframes pulse{0%{transform:translate(-50%,-50%) scale(1);opacity:0.6;}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0;}}
+.tech-badge{position:absolute;background:rgba(26,34,53,0.95);border:1px solid rgba(0,181,200,0.2);border-radius:8px;padding:7px 13px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:var(--text);white-space:nowrap;display:flex;align-items:center;gap:7px;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.tech-badge span{font-size:15px;}
+.badge-aws{top:4%;left:50%;transform:translateX(-130%);animation:float1 4s ease-in-out infinite;}
+.badge-gcp{top:4%;right:50%;transform:translateX(130%);animation:float2 4.5s ease-in-out infinite;}
+.badge-azure{top:50%;left:-2%;transform:translateY(-50%);animation:float3 5s ease-in-out infinite;}
+.badge-ai{top:50%;right:-2%;transform:translateY(-50%);animation:float1 5.5s ease-in-out infinite;}
+.badge-docker{bottom:4%;left:50%;transform:translateX(-130%);animation:float2 4s ease-in-out infinite;}
+.badge-cicd{bottom:4%;right:50%;transform:translateX(130%);animation:float3 4.8s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translateX(-130%) translateY(0);}50%{transform:translateX(-130%) translateY(-8px);}}
+@keyframes float2{0%,100%{transform:translateX(130%) translateY(0);}50%{transform:translateX(130%) translateY(-10px);}}
+@keyframes float3{0%,100%{transform:translateY(-50%);}50%{transform:translateY(calc(-50% - 8px));}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,181,200,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,181,200,0.05) 1px,transparent 1px);background-size:38px 38px;border-radius:50%;width:380px;height:380px;top:50%;left:50%;transform:translate(-50%,-50%);}
 </style>
 
 <section class="hero">
@@ -251,16 +258,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px;d
   <div class="hero-right">
     <div class="tech-globe">
       <div class="grid-bg"></div>
-      <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
-      <div class="orbit orbit-2"><div class="orbit-dot orbit-dot-2"></div></div>
-      <div class="orbit orbit-3"><div class="orbit-dot orbit-dot-3"></div></div>
-      <div class="orbit orbit-4"><div class="orbit-dot orbit-dot-4"></div></div>
+      <div class="orbit orbit-1"><div class="orbit-dot dot-cyan"></div><div class="orbit-dot dot-blue" style="top:auto;bottom:-5px;left:50%;margin-left:-5px;"></div></div>
+      <div class="orbit orbit-2"><div class="orbit-dot dot-purple"></div><div class="orbit-dot dot-orange" style="top:auto;bottom:-5px;"></div></div>
+      <div class="orbit orbit-3"><div class="orbit-dot dot-orange"></div><div class="orbit-dot dot-green" style="top:auto;bottom:-5px;"></div></div>
+      <div class="orbit orbit-4"><div class="orbit-dot dot-green"></div><div class="orbit-dot dot-cyan" style="top:auto;bottom:-5px;"></div></div>
+      <div class="globe-pulse"></div>
       <div class="globe-center">☁️</div>
-      <div class="tech-badge badge-aws"><span>☁️</span> AWS Cloud</div>
+      <div class="tech-badge badge-aws"><span>☁️</span> AWS</div>
+      <div class="tech-badge badge-gcp"><span>🔵</span> GCP</div>
+      <div class="tech-badge badge-azure"><span>🔷</span> Azure</div>
       <div class="tech-badge badge-ai"><span>🤖</span> AI / LLM</div>
       <div class="tech-badge badge-docker"><span>🐳</span> Docker</div>
       <div class="tech-badge badge-cicd"><span>⚙️</span> CI/CD</div>
-      <div class="tech-badge badge-next"><span>⚡</span> Next.js</div>
     </div>
   </div>
 
